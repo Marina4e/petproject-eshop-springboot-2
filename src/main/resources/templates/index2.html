@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    ...
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div id="comments">
+    <h3>Comments</h3>
+    <ul id="list">
+        <li th:each="item: ${items}"><span th:text="${item.content}">comment</span></li>
+    </ul>
+</div>
+
+<div id="whatsup">
+    <form>
+        <label for="content">What's up?</label>
+        <input type="text" id="content" placeholder="type news here...">
+        <button id="send" type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
